@@ -23,7 +23,7 @@ jobs:
 
       # Publish the site
       - name: Publish
-        run: dotnet publish web-ballistics-test.sln -c:Release -o:publish -p:GHPages=true
+        run: dotnet publish web-ballistics-test.sln -c:Release -o:release -p:GHPages=true
 
       # # publishes Blazor project to the release-folder
       # - name: Publish .NET Core Project
@@ -47,4 +47,4 @@ jobs:
         with:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: publish/wwwroot
+          FOLDER: release/wwwroot
